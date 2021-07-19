@@ -10,30 +10,36 @@
 <body>
     <script>
         let bodya;
-        console.log('' === bodya);
-        console.log(undefined === bodya);
-        console.log('undefined === null', undefined === bodya);
-        console.log('undefined == null', undefined == bodya);
-        let name = 'Bohdan';
-        console.log(name);
-        name = 'Bodya';
-        console.log(name);
-        name = 11 + 10;
-        console.log(name); 
-        let bodya = {
+        
+        class Contact {
+            constructor(firstNameOrObject, lastName, email) {
+                if (typeof firstNameOrObject === 'object') {
+                    Object.assign(this, firstNameOrObject);
+                } else {
+                    this.firstName = firstNameOrObject;
+                    this.lastName = lastName;
+                    this.email = email;
+                }
+            }
+
+            toString () {
+                console.log(`${this.firstName} ${this.lastName} <${this.email}>`)
+            }
+        };
+
+        bodya = new Contact('Bohdan', 'Gusak', 'alexko@in6k.com');
+        console.log('' + bodya);
+        let Bohdan = new Contact({
             firstName: 'Bohdan',
             lastName: 'Husak',
             email: 'bromanovich99@gm.com'
-            };
-            console.log(contact.firstName + '' + contact.lastName);
+            });
+            console.log('in main', '' + bodya);
+            //console.log(contact.firstName + '' + contact.lastName);
         let colors =  { red: '#ff0000', black: '#000000', white: '#ffffff' };
         for (let name in colors) {
             console.log(name + ' has code ' + colors[name].toUpperCase());
-        }
-        printContact(alex);
-        function printContact(contact) {
-            console.log(`${contact.firstName} ${contact.lastName} <${contact.email}>`);
-        }
+        };
     </script>
 </body>
 </html>
