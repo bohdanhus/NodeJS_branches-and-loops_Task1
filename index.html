@@ -9,26 +9,31 @@
 </style>
 <body>
     <script>
+        let bodya;
+        console.log('' === bodya);
+        console.log(undefined === bodya);
+        console.log('undefined === null', undefined === bodya);
+        console.log('undefined == null', undefined == bodya);
         let name = 'Bohdan';
         console.log(name);
         name = 'Bodya';
         console.log(name);
         name = 11 + 10;
         console.log(name); 
-        let contact = {
+        let bodya = {
             firstName: 'Bohdan',
             lastName: 'Husak',
             email: 'bromanovich99@gm.com'
             };
             console.log(contact.firstName + '' + contact.lastName);
-        let colors =  { red: '#ff0000',
-          black: '#000000',
-          white: '#ffffff'
-         };
+        let colors =  { red: '#ff0000', black: '#000000', white: '#ffffff' };
         for (let name in colors) {
             console.log(name + ' has code ' + colors[name].toUpperCase());
         }
-
+        printContact(alex);
+        function printContact(contact) {
+            console.log(`${contact.firstName} ${contact.lastName} <${contact.email}>`);
+        }
     </script>
 </body>
 </html>
