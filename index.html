@@ -9,12 +9,26 @@
 </style>
 <body>
     <script>
-        let name = 'Alex';
+        let name = 'Bohdan';
         console.log(name);
-        name = 'Vova';
+        name = 'Bodya';
         console.log(name);
-        name = 12 + 34;
-        console.log(name);
+        name = 11 + 10;
+        console.log(name); 
+        let contact = {
+            firstName: 'Bohdan',
+            lastName: 'Husak',
+            email: 'bromanovich99@gm.com'
+            };
+            console.log(contact.firstName + '' + contact.lastName);
+        let colors =  { red: '#ff0000',
+          black: '#000000',
+          white: '#ffffff'
+         };
+        for (let name in colors) {
+            console.log(name + ' has code ' + colors[name].toUpperCase());
+        }
+
     </script>
 </body>
 </html>
