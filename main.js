@@ -29,14 +29,17 @@ function Plural(num, titles) {
 };
 
 // Функция подсчета суммы в диапазоне целых чисел
-function summCalculate(a, n) {
-    let counter = Math.max(a,n) - Math.min(a,n)
-    let result = 0;
-    for (let i = 0; k <= counter; k++)
-    result = 
+function summAreaCalculate(arr) {
+let lower = Math.min(arr[0], arr[1]);
+let upper = Math.max(arr[0], arr[1]);
+let result = 0;
+for (let i = lower; i <= upper; i++){
+	result = result + i;
+    }
 }
-console.log(summCalculate(1,7))
-//console.log(summCalculate(10,5))
+
+console.log(summAreaCalculate(2,6));
+
 // Функция подсчета факториала до заданного элемента
 function factorialCalculate(number) {
     let result = 1;
