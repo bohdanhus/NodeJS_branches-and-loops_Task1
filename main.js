@@ -1,44 +1,35 @@
-// Функция плюаризации слова. Сделать для всех случаев: 0, 2-4, 5-10, 11-19, 20-99, 100 и больше
 //nom — Nominativ, именительный падеж;
 //gen — Genetiv, родительный падеж;
 //plu — Plural, множественное число.
-const titles = ['плюс', 'плюса', 'плюсов']
-
-console.log(Plural(12, titles));
-function Plural(num, titles) {  
-
- let result;
- let n = num % 100;
- let i = num % 10; 
-   if (i => 11 && i <= 19) {
- 	result = titles[0];
- } else if (num == 0) {
- 	result = ['Число должно быть больше единицы'];
- } else if (i == 1) {
- 	result = titles[0];
- } else if (i => 2 && i <= 4) {
- 	result = titles[1];
- } else if (i => 5 && i <= 10) {
- 	result = titles[2];
- } else if (i => 11 && i <= 19) {
- 	result = titles[0];
- } else if (i => 2 && i <= 10) {
- 	result = titles[2];
- }
- return result
+// Функция плюаризации слова. Сделать для всех случаев: 0, 2-4, 5-10, 11-19, 20-99, 100 и больше
+function Plural(num, nom, gen, plu) {  
+  if (num % 10 == 0) {
+    return `${num} ${plu}`;
+  } else if (num == 1) {
+    return `${num} ${nom}`;
+  } else if (num % 10 > 10 || num % 10 < 20){
+	return `${num} ${plu}`;
+  } else if (num % 10 >= 2 || num % 10 <= 4){
+    return `${num}  ${gen}`;
+  } else if (num % 10 >= 5 || num % 10 <= 10){
+	return `${num} ${plu}`;
+  }
+  return; 
 };
+console.log(Plural(22,'плюс', 'плюса', 'плюсов'))
 
 // Функция подсчета суммы в диапазоне целых чисел
-function summAreaCalculate(arr) {
-let lower = Math.min(arr[0], arr[1]);
-let upper = Math.max(arr[0], arr[1]);
-let result = 0;
-for (let i = lower; i <= upper; i++){
+function summAreaCalculate(fisrt,second) {
+  let lower = Math.min(fisrt,second);
+  let upper = Math.max(fisrt,second);
+  let result = 0;
+  for (let i = lower; i <= upper; i++){
 	result = result + i;
-    }
+  }
+  return result
 }
 
-console.log(summAreaCalculate(2,6));
+console.log(summAreaCalculate(1,11));
 
 // Функция подсчета факториала до заданного элемента
 function factorialCalculate(number) {
@@ -48,5 +39,5 @@ function factorialCalculate(number) {
     }
     return result;
 }
-console.log(factorialCalculate(3));
+//console.log(factorialCalculate(3));
 
