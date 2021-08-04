@@ -2,19 +2,14 @@
 //gen — Genetiv, родительный падеж;
 //plu — Plural, множественное число.
 // Функция плюаризации слова. Сделать для всех случаев: 0, 2-4, 5-10, 11-19, 20-99, 100 и больше
-function Plural(num, nom, gen, plu) {  
-  if (num % 10 == 0) {
-    return `${num} ${plu}`;
-  } else if (num == 1) {
-    return `${num} ${nom}`;
-  } else if (num % 10 > 10 && num % 10 < 20){
-	return `${num} ${plu}`;
-  } else if (num % 10 >= 2 && num % 10 <= 4){
-    return `${num}  ${gen}`;
-  } else if (num % 10 >= 5 && num % 10 <= 10){
-	return `${num} ${plu}`;
-  }
-  return; 
+function Plural(n, nom, gen, plu) {  
+  if (n % 10 === 1 && n % 100 !== 11) {
+    return `${n} ${nom}`;
+  } else if (n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20)) {
+    return `${n} ${gen}`;
+  } else {
+      return `${num} ${plu}`
+  } 
 };
 console.log(Plural(22,'плюс', 'плюса', 'плюсов'))
 
