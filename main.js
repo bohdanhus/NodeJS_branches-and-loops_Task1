@@ -36,3 +36,17 @@ function factorialCalculate(number) {
 }
 //console.log(factorialCalculate(3));
 
+const plural = require("./plural")
+/*
+describe('pluralization', () => {
+    it('has no effect with 1', () => {
+        expect(plural(1, 'плюс', 'плюса', 'плюсов')).toBe('1 плюс');
+    });
+    it('has return genetiw with 2', () => {
+        expect(plural(2, 'плюс', 'плюса', 'плюсов')).toBe('2 плюса');
+    });
+    it('rehas return plural with 5', () => {
+        expect(plural(5, 'плюс', 'плюса', 'плюсов')).toBe('5 плюсов');
+    })
+});
+*/
